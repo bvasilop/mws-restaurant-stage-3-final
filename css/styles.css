@@ -602,7 +602,7 @@ nav.breadcrumb {
 }
 
 
-
+*/
 
 body,td,th,p{
 	font-family: Arial, Helvetica, sans-serif;
@@ -654,7 +654,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 #footer a {
     color: orange;
 }
-*/
+
 /* ====================== Navigation ====================== */
 nav {
   width: 100%;
@@ -818,6 +818,27 @@ label {
   width: 100%;
   z-index: 1000;
 }
+
+#static-map-container,
+#static-map-container .backdrop {
+  height: 400px;
+}
+
+#static-map-container .static-map {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#static-map-container .backdrop {
+  background-color: rgba(255, 255, 255, 0.42);
+  position: absolute;
+  width: 100%;
+  z-index: 5;
+}
 .inside #map-container {
   background: blue none repeat scroll 0 0;
   height: 100%;
@@ -906,6 +927,123 @@ label {
 #reviews-list li p {
   margin: 0 0 10px;
 }
+
+  #reviews-container {
+    display: flex;
+    flex-flow: column wrap;
+    padding: 10px 20px;
+  }
+
+  #review-status {
+    color: #28bb51;
+    font-size: 24px;
+    text-align: center;
+  }
+
+  #review-form-container {
+    padding: 10px 20px;
+  }
+
+  .review-form-wrapper {
+    display: grid;
+    grid-gap: 20px;
+  }
+
+  .review-form-wrapper p {
+    margin: 0;
+  }
+
+  .review-form-wrapper input[type='text'] {
+    height: 40px;
+    font-size: 1.1rem;
+    width: 35%;
+  }
+
+  .review-form-wrapper input[type='submit'] {
+    border-radius: 4px;
+    width: 15%;
+    justify-self: center;
+    box-shadow: 2px 2px 8px 2px #cecece;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid tomato;
+    background: rgba(255, 255, 255, 0.92);
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  .review-form-wrapper input[type='submit']:hover {
+    box-shadow: none;
+    background-color: tomato;
+  }
+
+  .review-form-radio-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  #review-status {
+    color: #28bb51;
+    font-size: 24px;
+    text-align: center;
+  }
+
+  #review-form-container {
+    padding: 10px 20px;
+    width: 50%;
+  }
+
+  .review-form-wrapper {
+    display: grid;
+    grid-gap: 20px;
+  }
+
+  .review-form-wrapper p {
+    margin: 0;
+  }
+
+
+
+  .review-form-radio-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #reviews-container h3,
+  #review-form-container h3 {
+    color: #252831;
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: -1px;
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .button {
+    justify-self: center;
+    z-index: 7;
+    font-size: 1.2rem;
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid tomato;
+    padding: 0.25rem 0.5rem;
+    box-shadow: 2px 2px 8px 2px #cecece;
+    background-color: tomato;
+  }
+
+  .button:hover {
+    transition: 475ms;
+    background-color: orange;
+    border: 1px solid orange;
+    box-shadow: none;
+  }
+
+  #restaurant-container .button {
+    max-width: 170px;
+    justify-self: center;
+    margin: 20px 0;
+  }
+
+
 #restaurant-hours td {
   color: #666;
 }
@@ -966,6 +1104,21 @@ RESPONSIVE SETTINGS
       width: 100%;
       position: relative;
     }
+    .inside #review-form-container {
+        align-content: flex-start;
+        padding: 124px 20px 0 20px;
+      }
+
+     /* .inside #restaurant-container {
+        grid-row: 1 / -1;
+        align-content: flex-start;
+        padding: 124px 0 0 0;
+      }*/
+
+      .inside .restaurant-img {
+        max-width: 600px;
+      }
+
     #restaurant-container, #reviews-container {
       width: 100%;
     }
