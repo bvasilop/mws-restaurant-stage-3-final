@@ -73,15 +73,17 @@ window.initMap = () => {
     center: self.restaurant.latlng,
     scrollwheel: false
   });
+  document.getElementById('map').setAttribute('role', 'application');
+  //fillBreadcrumb();
   DBHelper.mapMarkerForRestaurant(self.restaurant, self.map);
 
-  // Ally improvements for the map container and the iframe itself
-  document
+  // Accessibility improvements for the map container and iframe
+  /*document
     .querySelector('#map')
     .setAttribute(
       'aria-label',
       `Map with restaurant ${self.restaurant.name}'s location in New York city`
-    );
+    );*/
 };
 
 /**
@@ -146,6 +148,9 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   image.className = 'restaurant-img';
   image.alt = `Restaurant ${restaurant.name}`;
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+   /* unique alt-arialabel */
+   image.setAttribute('aria-label', name.innerHTML + ' restaurant');
+   //image.setAttribute('alt', name.innerHTML + ' restaurant');
 
   picture.appendChild(source620Webp);
   picture.appendChild(source620);
@@ -159,6 +164,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   if (restaurant.operating_hours) {
     fillRestaurantHoursHTML();
   }
+
 
   // get reviews by id
   getReviewsById();
@@ -181,7 +187,7 @@ fillRestaurantHoursHTML = (
     const time = document.createElement('td');
     time.innerHTML = operatingHours[key];
     row.appendChild(time);
-
+    time.style.color = '#525252';
     hours.appendChild(row);
   }
 };
@@ -219,23 +225,34 @@ fillReviewsHTML = (reviews = self.reviews) => {
  */
 createReviewHTML = review => {
   const li = document.createElement('li');
-  const name = document.createElement('p');
+  const name = document.createElement('h4');
+  const reviewHeader = document.createElement('div');
+  reviewHeader.className = 'review-header';
+  li.appendChild(reviewHeader);
   name.className = 'highlight';
   name.innerHTML = review.name;
-  li.appendChild(name);
+  name.innerHTML = review.name;
+  name.className = 'review-author';
+  name.setAttribute('role', 'header'); //added ARIA role for accessibilty
+  name.setAttribute('tabindex', '0'); //added tabindex for accessibilty
+  reviewHeader.appendChild(name);
 
-  const date = document.createElement('p');
+
+
+  const date = document.createElement('span');
   const dateString = new Date(review.createdAt);
-  date.innerHTML = dateString.toDateString();
+	date.innerHTML = dateString.toDateString();
+	date.setAttribute('tabindex', '0'); //added tabindex for accessibilty
   li.appendChild(date);
 
-  const rating = document.createElement('p');
+  const rating = document.createElement('div');
   rating.innerHTML = `Rating: ${review.rating}`;
-  rating.className = 'highlight';
+  rating.className = 'rating';
   li.appendChild(rating);
 
   const comments = document.createElement('p');
-  comments.innerHTML = review.comments;
+	comments.innerHTML = review.comments;
+	rating.setAttribute('tabindex', '0'); //added tabindex for accessibilty
   li.appendChild(comments);
 
   return li;
@@ -248,7 +265,7 @@ fillBreadcrumb = (restaurant = self.restaurant) => {
   const breadcrumb = document.getElementById('breadcrumb');
   const li = document.createElement('li');
   li.innerHTML = restaurant.name;
-  li.setAttribute('aria-current', 'page');
+	li.setAttribute('aria-current', restaurant.name); //added aria-current for accessibilty
   breadcrumb.appendChild(li);
 };
 

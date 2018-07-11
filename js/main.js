@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 fetchNeighborhoods = () => {
   DBHelper.fetchNeighborhoods((error, neighborhoods) => {
-    if (error) {
+    if (error != null) {
       // Got an error
       console.error(error);
     } else {
@@ -40,6 +40,8 @@ fillNeighborhoodsHTML = (neighborhoods = self.neighborhoods) => {
     const option = document.createElement('option');
     option.innerHTML = neighborhood;
     option.value = neighborhood;
+    option.setAttribute('aria-label', neighborhood);
+    option.setAttribute('role', 'option');
     select.append(option);
   });
 };
@@ -69,6 +71,8 @@ fillCuisinesHTML = (cuisines = self.cuisines) => {
     const option = document.createElement('option');
     option.innerHTML = cuisine;
     option.value = cuisine;
+    option.setAttribute('aria-label', cuisine);
+    option.setAttribute('role', 'option');
     select.append(option);
   });
 };
@@ -112,6 +116,7 @@ updateRestaurants = () => {
       } else {
         resetRestaurants(restaurants);
         fillRestaurantsHTML();
+        //lazy load update call
         myLazyLoad.update();
       }
     }
@@ -149,6 +154,8 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
  */
 createRestaurantHTML = restaurant => {
   const li = document.createElement('li');
+  li.setAttribute('role', 'listitem');
+  li.setAttribute('tabindex', '0');
 
   const favoriteContainer = document.createElement('div');
   favoriteContainer.style.textAlign = 'right';
