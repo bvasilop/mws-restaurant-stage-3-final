@@ -1,0 +1,27 @@
+{
+  "name": "Udacity MWS Restaurant Reviews Final Stage 3",
+  "short_name": "MWS RR Final",
+  "theme_color": "#252831",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "Scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "img/icons/mws_rr_96x96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "img/icons/mws_rr_192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "img/icons/mws_rr_512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "splash_pages": null
+}
