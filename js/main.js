@@ -172,17 +172,17 @@ createRestaurantHTML = restaurant => {
   favorite.dataset.liked = restaurant.is_favorite;
 
   if (favorite.dataset.liked == 'true') {
-    favorite.innerText = '💜';
+    favorite.innerText = '❤️';
   } else {
     favorite.innerText = '🖤';
-    favorite.style.opacity = '0.7';
+    favorite.style.opacity = '0.5';
   }
 
   favorite.addEventListener('click', e => {
     // Update the UI
     if (e.target.dataset.liked == 'false') {
       e.target.dataset.liked = true;
-      e.target.innerText = '💜';
+      e.target.innerText = '❤️';
       e.target.style.opacity = '1';
       e.target.parentNode.parentNode.classList.add('liked');
     } else {
@@ -256,6 +256,7 @@ createRestaurantHTML = restaurant => {
 /**
  * Add markers for current restaurants to the map.
  */
+/*
 createStaticMapHTML = () => {
   const staticMapContainer = document.getElementById('static-map-container');
   const mapContainer = document.getElementById('map-container');
@@ -312,7 +313,7 @@ createStaticMapHTML = () => {
   staticMapContainer.append(backdrop);
   staticMapContainer.append(staticMap);
 };
-
+*/
 /**
  * Add markers for current restaurants to the map.
  */

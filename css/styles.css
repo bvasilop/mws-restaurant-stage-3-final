@@ -742,6 +742,30 @@ nav h1 a {
   padding: 0 10px;
   width: 200px;
 }
+.filter-options {
+    padding: 0;
+  }
+  options select {
+    display: inline-block;
+    margin: 8px auto;
+    text-align: center;
+  }
+  label {
+    text-align: center;
+    display: block;
+    font-size: 1.15rem;
+    font-weight: 700;
+    position: relative;
+  }
+  .filter-options h2, .filter-options select {
+      display: block;
+      margin: 10px auto;
+      text-align: center;
+  }
+  .filter-options h2 {
+    padding-top: 10px;
+    font-size: 1.4rem;
+  }
 label {
   margin: 0px 6px;
 }
@@ -776,6 +800,10 @@ label {
   border-radius: 1rem 0;
   max-width: 100%;
   min-width: 100%;
+}
+.restaurant-img {
+    max-width: 100%;
+    border-radius: 1rem 0;
 }
 #restaurants-list li h1 {
   color: #f18200;
@@ -848,7 +876,7 @@ label {
   width: 50%;
 }
 .inside #map {
-  background-color: #ccc;
+  background-color: #303e48;
   height: 100%;
   width: 100%;
 }
@@ -869,7 +897,7 @@ label {
 }
 #restaurant-img {
     display: block;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     border-radius: 2rem 0;
 }
@@ -1116,7 +1144,7 @@ RESPONSIVE SETTINGS
       }*/
 
       .inside .restaurant-img {
-        max-width: 600px;
+        max-width: 100%;
       }
 
     #restaurant-container, #reviews-container {
@@ -1176,6 +1204,8 @@ RESPONSIVE SETTINGS
       padding-top: 10px;
       font-size: 1.4rem;
     }
+    .inside .restaurant-img {
+        max-width: 100%;
     .rating {
         width: 33%;
         max-width: auto;
@@ -1197,4 +1227,6 @@ RESPONSIVE SETTINGS
      padding: 1rem 0;
      font-size: .65rem;
     }
+    .inside .restaurant-img {
+        max-width: 100%;
     }
