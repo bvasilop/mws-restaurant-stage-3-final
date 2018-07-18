@@ -932,6 +932,7 @@ label {
     padding: 0 0 .2rem 0;
     width: 90%;
     margin: 0 auto;
+
 }
 #reviews-list {
     margin: 0;
@@ -949,7 +950,8 @@ label {
     list-style-type: none;
     overflow: hidden;
     position: relative;
-    width: calc(90% - 20px);
+    /*width: calc(90% - 20px);*/
+    width: calc(97%);
     margin: 0 auto 20px;
 }
 #reviews-list li p {
@@ -959,7 +961,8 @@ label {
   #reviews-container {
     display: flex;
     flex-flow: column wrap;
-    padding: 10px 20px;
+   /*padding: 10px 20px;*/
+   padding: 0;
   }
 
   #review-status {
@@ -970,6 +973,10 @@ label {
 
   #review-form-container {
     padding: 10px 20px;
+
+  }
+  textarea {
+      font-size: 1.25rem;
   }
 
   .review-form-wrapper {
@@ -998,6 +1005,9 @@ label {
     font-size: 1.5rem;
     cursor: pointer;
   }
+  /*#review-text [type='text'] {
+      font-size: 10rem;
+  }*/
 
   .review-form-wrapper input[type='submit']:hover {
     box-shadow: none;
