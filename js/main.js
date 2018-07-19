@@ -175,7 +175,7 @@ createRestaurantHTML = restaurant => {
     favorite.innerText = '❤️';
   } else {
     favorite.innerText = '🖤';
-    favorite.style.opacity = '0.5';
+    favorite.style.opacity = '1';
   }
 
   favorite.addEventListener('click', e => {
@@ -188,7 +188,7 @@ createRestaurantHTML = restaurant => {
     } else {
       e.target.dataset.liked = false;
       e.target.innerText = '🖤';
-      e.target.style.opacity = '0.7';
+      e.target.style.opacity = '1';
       e.target.parentNode.parentNode.classList.remove('liked');
     }
 
@@ -335,9 +335,12 @@ window.addEventListener('load', () => {
   // Update lazy loaded images
   myLazyLoad.update();
 
-  const iframe = document.querySelector('iframe');
-  if (!iframe) return;
+
+    const iframe = document.getElementsByTagName('iframe')[0];
+    //console.log(iframe);
+    iframe.setAttribute('title', 'Map of New York Restaurants');
+
   iframe.setAttribute('title', 'map of restaurants');
-  favorite.setAttribute('role', 'img');
-  favorite.setAttribute('aria-label', 'google map');
+  //favorite.setAttribute('role', 'presentation');
+  //favorite.setAttribute('aria-label', 'google map');
 });
