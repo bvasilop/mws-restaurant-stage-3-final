@@ -5,27 +5,51 @@ var map;
  * Load page.
  */
 document.addEventListener('DOMContentLoaded', () => {
+
+
+
+
+
+    // Accessibility improvements for the map container and iframe
+
+
+
+    /**
+ * Initialize Google Maps.
+ */
+  window.initMap = () => {
   fetchRestaurantFromURL((error, restaurant) => {
     if (error) {
       // Got an error!
       console.error(error);
     } else {
-      fillBreadcrumb();
+        self.map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 16,
+            center: self.restaurant.latlng,
+            scrollwheel: false
+          });
 
-      const showMapBtn = document.getElementById('restaurant-on-map');
-      showMapBtn.addEventListener('click', () => {
-        document.getElementById('map-container').style.display = 'block';
-        window.initMap();
-        showMapBtn.style.display = 'none';
-      });
+          document.getElementById('map').setAttribute('role', 'application');
+         /* document
+          .querySelector('#map')
+          .setAttribute(
+            'aria-label',
+            `Map with restaurant ${self.restaurant.name}'s location in New York city`
+          );*/
+          //fillBreadcrumb();
 
-      document
+          DBHelper.mapMarkerForRestaurant(self.restaurant, self.map);
+          fillBreadcrumb();
+
+          document
         .getElementById('review-submit')
         .addEventListener('click', submitReview);
-    }
-  });
 
-  DBHelper.loadFromIDB('pending-reviews', 'pending-reviews')
+
+        }
+	});
+};
+ DBHelper.loadFromIDB('pending-reviews', 'pending-reviews')
     .then(data => {
       // If no pending reviews, return
       if (data.length == 0) {
@@ -64,27 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-/**
- * Initialize Google Maps.
- */
-window.initMap = () => {
-  self.map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 16,
-    center: self.restaurant.latlng,
-    scrollwheel: false
-  });
-  document.getElementById('map').setAttribute('role', 'application');
-  //fillBreadcrumb();
-  DBHelper.mapMarkerForRestaurant(self.restaurant, self.map);
 
-  // Accessibility improvements for the map container and iframe
-  /*document
-    .querySelector('#map')
-    .setAttribute(
-      'aria-label',
-      `Map with restaurant ${self.restaurant.name}'s location in New York city`
-    );*/
-};
 
 /**
  * Get current restaurant from page URL.
@@ -139,7 +143,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
 
   // Responsive JPG
   const source620 = document.createElement('source');
-  source620.media = '(min-width: 620px) and (max-width: 980px)';
+  source620.media = '(min-width: 620px) and (max-width: 2500px)';
   source620.srcset = DBHelper.imageUrlForRestaurant(restaurant)
     .split('.jpg')
     .join('_800.jpg');
@@ -233,7 +237,7 @@ createReviewHTML = review => {
   name.innerHTML = review.name;
   name.innerHTML = review.name;
   name.className = 'review-author';
-  name.setAttribute('role', 'header'); //added ARIA role for accessibilty
+  name.setAttribute('role', 'heading'); //added ARIA role for accessibilty
   name.setAttribute('tabindex', '0'); //added tabindex for accessibilty
   reviewHeader.appendChild(name);
 
@@ -265,7 +269,7 @@ fillBreadcrumb = (restaurant = self.restaurant) => {
   const breadcrumb = document.getElementById('breadcrumb');
   const li = document.createElement('li');
   li.innerHTML = restaurant.name;
-	li.setAttribute('aria-current', restaurant.name); //added aria-current for accessibilty
+  //li.setAttribute('aria-current', restaurant.name); //added aria-current for accessibilty
   breadcrumb.appendChild(li);
 };
 
@@ -343,6 +347,11 @@ submitReview = e => {
     ul.appendChild(newReviewHTML);
 
     const reviewStatus = document.getElementById('review-status');
-    reviewStatus.innerText = 'Thank you for reviewing!';
+    reviewStatus.innerText = 'Thanks for reviewing!';
+
+    google.maps.event.addListenerOnce(map, 'idle', () => {
+        document.getElementsByTagName('iframe')[0].title = "Google Maps";
+      })
   });
 };
+
