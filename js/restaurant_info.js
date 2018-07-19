@@ -5,6 +5,29 @@ var map;
  * Load page.
  */
 document.addEventListener('DOMContentLoaded', () => {
+
+    /**
+ * Initialize Google Maps.
+ */
+window.initMap = () => {
+    self.map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 16,
+      center: self.restaurant.latlng,
+      scrollwheel: false
+    });
+    document.getElementById('map').setAttribute('role', 'application');
+    //fillBreadcrumb();
+    DBHelper.mapMarkerForRestaurant(self.restaurant, self.map);
+
+    // Accessibility improvements for the map container and iframe
+    /*document
+      .querySelector('#map')
+      .setAttribute(
+        'aria-label',
+        `Map with restaurant ${self.restaurant.name}'s location in New York city`
+      );*/
+  };
+
   fetchRestaurantFromURL((error, restaurant) => {
     if (error) {
       // Got an error!
@@ -12,12 +35,12 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       fillBreadcrumb();
 
-      const showMapBtn = document.getElementById('restaurant-on-map');
-      showMapBtn.addEventListener('click', () => {
-        document.getElementById('map-container').style.display = 'block';
+     // const showMapBtn = document.getElementById('restaurant-on-map');
+     // showMapBtn.addEventListener('click', () => {
+        //document.getElementById('map-container').style.display = 'block';
         window.initMap();
-        showMapBtn.style.display = 'none';
-      });
+        //showMapBtn.style.display = 'none';
+     // });
 
       document
         .getElementById('review-submit')
@@ -64,27 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-/**
- * Initialize Google Maps.
- */
-window.initMap = () => {
-  self.map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 16,
-    center: self.restaurant.latlng,
-    scrollwheel: false
-  });
-  document.getElementById('map').setAttribute('role', 'application');
-  //fillBreadcrumb();
-  DBHelper.mapMarkerForRestaurant(self.restaurant, self.map);
 
-  // Accessibility improvements for the map container and iframe
-  /*document
-    .querySelector('#map')
-    .setAttribute(
-      'aria-label',
-      `Map with restaurant ${self.restaurant.name}'s location in New York city`
-    );*/
-};
 
 /**
  * Get current restaurant from page URL.
@@ -139,7 +142,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
 
   // Responsive JPG
   const source620 = document.createElement('source');
-  source620.media = '(min-width: 620px) and (max-width: 980px)';
+  source620.media = '(min-width: 620px) and (max-width: 1023px)';
   source620.srcset = DBHelper.imageUrlForRestaurant(restaurant)
     .split('.jpg')
     .join('_800.jpg');
@@ -343,6 +346,6 @@ submitReview = e => {
     ul.appendChild(newReviewHTML);
 
     const reviewStatus = document.getElementById('review-status');
-    reviewStatus.innerText = 'Thank you for reviewing!';
+    reviewStatus.innerText = 'Thanks for reviewing!';
   });
 };

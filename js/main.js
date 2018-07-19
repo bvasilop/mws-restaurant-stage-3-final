@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   fetchNeighborhoods();
   fetchCuisines();
   updateRestaurants();
-  createStaticMapHTML();
+  //createStaticMapHTML();
 });
 
 /**
@@ -160,7 +160,7 @@ createRestaurantHTML = restaurant => {
   const favoriteContainer = document.createElement('div');
   favoriteContainer.style.textAlign = 'right';
   const favorite = document.createElement('span');
-  favorite.style.transition = '475ms';
+  favorite.style.transition = '450ms';
   favorite.setAttribute('role', 'img');
   favorite.setAttribute('aria-label', 'heart emoji');
 

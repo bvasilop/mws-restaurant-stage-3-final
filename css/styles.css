@@ -751,7 +751,7 @@ nav h1 a {
     text-align: center;
   }
   label {
-    text-align: center;
+    text-align: left;
     display: block;
     font-size: 1.15rem;
     font-weight: 700;
@@ -772,7 +772,7 @@ label {
 
 /* ====================== Restaurant Listing ====================== */
 #restaurants-list {
-  background-color: #f3f3f3;
+  background-color: #a6d4e7;
   list-style: outside none none;
   margin: 0;
   padding: 0;
@@ -805,6 +805,7 @@ label {
     max-width: 100%;
     border-radius: 1rem 0;
 }
+
 #restaurants-list li h1 {
   color: #f18200;
   font-family: Arial, Helvetica, sans-serif;
@@ -820,8 +821,8 @@ label {
 }
 #restaurants-list p {
   margin: 0;
-  font-size: .95rem;
-  font-weight: 400;
+  font-size: 1rem;
+  font-weight: 500;
 }
 #restaurants-list li a {
   background-color: orange;/
@@ -867,6 +868,12 @@ label {
   width: 100%;
   z-index: 5;
 }
+
+#static_map{
+    width: 100%;
+
+    margin-top: 15px;
+  }
 .inside #map-container {
   background: blue none repeat scroll 0 0;
   height: 100%;
@@ -972,6 +979,7 @@ label {
   }
 
   #review-form-container {
+    background-color: #6998c3;
     padding: 10px 20px;
 
   }
@@ -982,6 +990,15 @@ label {
   .review-form-wrapper {
     display: grid;
     grid-gap: 20px;
+  }
+  .review-form-wrapper input[type='submit']:hover {
+    box-shadow: none;
+    background-color: tomato;
+  }
+
+  .review-form-radio-wrapper {
+    display: flex;
+    justify-content: space-between;
   }
 
   .review-form-wrapper p {
@@ -1081,6 +1098,10 @@ label {
     margin: 20px 0;
   }
 
+  #restaurant-img {
+    max-width: 82%;
+    margin: 0 auto;
+  }
 
 #restaurant-hours td {
   color: #666;
@@ -1144,10 +1165,10 @@ RESPONSIVE SETTINGS
     }
     .inside #review-form-container {
         align-content: flex-start;
-        padding: 124px 20px 0 20px;
+        padding: 20px 20px 0 20px;
+        width: 50%;
       }
-
-     /* .inside #restaurant-container {
+      /* .inside #restaurant-container {
         grid-row: 1 / -1;
         align-content: flex-start;
         padding: 124px 0 0 0;
@@ -1155,6 +1176,7 @@ RESPONSIVE SETTINGS
 
       .inside .restaurant-img {
         max-width: 100%;
+
       }
 
     #restaurant-container, #reviews-container {
@@ -1172,7 +1194,7 @@ RESPONSIVE SETTINGS
       text-align: center;
     }
     label {
-      text-align: center;
+      text-align: left;
       display: block;
       font-size: 1.15rem;
       font-weight: 700;
