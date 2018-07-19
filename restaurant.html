@@ -20,12 +20,12 @@
   <header>
     <!-- Beginning nav -->
     <nav>
-        <h1><a href="/" tabindex="1" role="link">Restaurant Reviews</a></h1>
+        <h1><a href="/" tabindex="0" role="link">Restaurant Reviews</a></h1>
     </nav>
     <!-- Beginning breadcrumb -->
-    <nav class="breadcrumb" role="navigation" tabindex="2" aria-label="Breadcrumb">
-        <ul id="breadcrumb" role="navigation" tabindex="2">
-          <li><span id="icon-arrow" aria-hidden="true">▶</span><a href="/" tabindex="2" role="link">Home</a></li>
+    <nav class="breadcrumb" role="navigation" tabindex="0" aria-label="Breadcrumb">
+        <ul id="breadcrumb" role="navigation" tabindex="0">
+         <li><span id="icon-arrow" aria-hidden="true">▶</span><a href="/" tabindex="0" role="link">Home</a></li>
         </ul>
     </nav>
     <!-- End breadcrumb -->
@@ -42,19 +42,19 @@
             <h2>This is a Static Map</h2>
         </section>-->
 		<!-- Beginning map -->
-    <section id="map-container" tabindex="3" role="section" aria-label="restaurant map">
-				<div id="map" tabindex="4" role="application" aria-label="image of map" lang="en"></div>
+    <section id="map-container" tabindex="0" role="application" aria-label="restaurant map">
+				<div id="map" tabindex="0" role="application" aria-label="image of map" lang="en"></div>
 			</section>
 			<!-- End map -->
     <!-- Beginning restaurant -->
-    <section id="restaurant-container" role="region" tabindex="5" aria-label="restaurant details">
-			<h2 id="restaurant-name" role="heading" tabindex="6"></h2>
+    <section id="restaurant-container" role="region" tabindex="0" aria-label="restaurant details">
+			<h2 id="restaurant-name" role="heading" tabindex="0"></h2>
 			<!--<picture id="restaurant-img"></picture>-->
-			<picture id="restaurant-img" role="img" tabindex="7" aria-label="restaurant" alt="restaurant"></picture>
-      <p id="restaurant-cuisine" role="heading" tabindex="8"></p>
-      <p id="restaurant-address" role="presentation" tabindex="9"></p>
-      <table id="restaurant-hours" role="presentation"tabindex="10"></table>
-      <button id="restaurant-on-map" class="button"  role="navigation "tabindex="11">Show on map</button>
+			<picture id="restaurant-img" role="img" tabindex="0" aria-label="restaurant" alt="restaurant"></picture>
+      <p id="restaurant-cuisine" role="heading" tabindex="0"></p>
+      <p id="restaurant-address" role="presentation" tabindex="0"></p>
+      <table id="restaurant-hours" role="presentation"tabindex="0"></table>
+      <!--<button id="restaurant-on-map" class="button"  role="navigation "tabindex="0">Show on map</button>-->
       <!-- Beginning map
       <section id="map-container">
         <div id="map" tabindex="0" aria-label="location" role="application"></div>
@@ -97,23 +97,23 @@
             </label>
           </div>
 
-          <input type="submit" id="review-submit" value="Send">
+          <input type="submit" id="review-submit" aria-label="Review Status" value="Send">
           <p id="review-status"></p>
         </div>
       </form>
     </section>
     <!-- End review form -->
     <!-- Beginning reviews -->
-    <section id="reviews-container" role="region" tabindex="11" aria-label="regional reviews of restaurant">
-				<ul id="reviews-list" role="list" tabindex="12" aria-label="reviews"></ul>
+    <section id="reviews-container" role="region" tabindex="0" aria-label="regional reviews of restaurant">
+				<ul id="reviews-list" role="list" tabindex="0" aria-label="reviews"></ul>
     </section>
     <!-- End reviews -->
   </main>
   <!-- End main -->
 
   <!-- Beginning footer -->
-	<footer id="footer" tabindex="14" role="contentinfo" aria-label="copyright section">
-			Copyright (c) 2018 <a href="/" tabindex="15" role="link"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
+	<footer id="footer" tabindex="0" role="contentinfo" aria-label="copyright section">
+			Copyright (c) 2018 <a href="/" tabindex="0" role="link"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
 		</footer>
   <!-- End footer -->
 

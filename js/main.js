@@ -338,4 +338,6 @@ window.addEventListener('load', () => {
   const iframe = document.querySelector('iframe');
   if (!iframe) return;
   iframe.setAttribute('title', 'map of restaurants');
+  favorite.setAttribute('role', 'img');
+  favorite.setAttribute('aria-label', 'google map');
 });

@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /**
  * Initialize Google Maps.
  */
+
 window.initMap = () => {
     self.map = new google.maps.Map(document.getElementById('map'), {
       zoom: 16,
@@ -142,7 +143,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
 
   // Responsive JPG
   const source620 = document.createElement('source');
-  source620.media = '(min-width: 620px) and (max-width: 1023px)';
+  source620.media = '(min-width: 620px) and (max-width: 2500px)';
   source620.srcset = DBHelper.imageUrlForRestaurant(restaurant)
     .split('.jpg')
     .join('_800.jpg');
@@ -236,8 +237,8 @@ createReviewHTML = review => {
   name.innerHTML = review.name;
   name.innerHTML = review.name;
   name.className = 'review-author';
-  name.setAttribute('role', 'header'); //added ARIA role for accessibilty
-  name.setAttribute('tabindex', '0'); //added tabindex for accessibilty
+  //name.setAttribute('role', 'header'); //added ARIA role for accessibilty
+ // name.setAttribute('tabindex', '0'); //added tabindex for accessibilty
   reviewHeader.appendChild(name);
 
 
@@ -268,7 +269,7 @@ fillBreadcrumb = (restaurant = self.restaurant) => {
   const breadcrumb = document.getElementById('breadcrumb');
   const li = document.createElement('li');
   li.innerHTML = restaurant.name;
-  li.setAttribute('aria-current', restaurant.name); //added aria-current for accessibilty
+  //li.setAttribute('aria-current', restaurant.name); //added aria-current for accessibilty
   breadcrumb.appendChild(li);
 };
 
@@ -347,5 +348,10 @@ submitReview = e => {
 
     const reviewStatus = document.getElementById('review-status');
     reviewStatus.innerText = 'Thanks for reviewing!';
+
+    google.maps.event.addListenerOnce(map, 'idle', () => {
+        document.getElementsByTagName('iframe')[0].title = "Google Maps";
+      })
   });
 };
+
