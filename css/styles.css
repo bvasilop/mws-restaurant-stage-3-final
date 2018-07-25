@@ -218,9 +218,6 @@ label {
     font-size: 1.4rem;
 }
 
-label {
-    margin: 0px 6px;
-}
 
 /* ====================== Restaurant Listing ====================== */
 
@@ -251,6 +248,8 @@ label {
 #restaurants-list .restaurant-img {
     background-color: #ccc;
     display: block;
+    margin-left: auto;
+    margin-right: auto;
     margin: 0;
     border-radius: 1rem 0;
     max-width: 100%;
@@ -258,8 +257,11 @@ label {
 }
 
 .restaurant-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     max-width: 100%;
-    border-radius: 1rem 0;
+    border-radius: 1.5rem 0;
 }
 
 #restaurants-list li h1 {
@@ -334,21 +336,16 @@ label {
     color: #303e48;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.65rem;
-    font-weight: 300;
+    font-weight: 600;
     letter-spacing: 0;
     margin: 1.4rem auto;
     text-transform: uppercase;
-    line-height: 1.1;
+    line-height: 0.5;
     width: 100%;
     text-align: center;
 }
 
-#restaurant-img {
-    display: block;
-    width: 97%;
-    margin: 0 auto;
-    border-radius: 2rem 0;
-}
+
 
 #restaurant-address {
     font-size: 1.15rem;
@@ -442,7 +439,7 @@ textarea {
 
 .review-form-wrapper input[type='submit']:hover {
     box-shadow: none;
-    background-color: tomato;
+    background-color:#781200;
 }
 
 .review-form-radio-wrapper {
@@ -462,19 +459,21 @@ textarea {
 
 .review-form-wrapper input[type='submit'] {
     border-radius: 4px;
-    width: 21%;
+    width: auto;
     justify-self: center;
     box-shadow: 2px 2px 8px 2px #cecece;
-    padding: 0.25rem 0.5rem;
-    border: 1px solid tomato;
-    background: rgba(255, 255, 255, 0.92);
+    padding: 0.25rem 2rem;
+    border: 1px solid  #781200;
+    border-radius: .5rem;
+    color: #ffffff;
+    background: rgb(18, 84, 37);
     font-size: 1.5rem;
     cursor: pointer;
 }
 
 .review-form-wrapper input[type='submit']:hover {
     box-shadow: none;
-    background-color: tomato;
+    background-color: #781200;
 }
 
 .review-form-radio-wrapper {
@@ -524,10 +523,10 @@ textarea {
     background: rgba(255, 255, 255, 0.92);
     border-radius: 4px;
     cursor: pointer;
-    border: 1px solid tomato;
+    border: 1px solid #781200;
     padding: 0.25rem 0.5rem;
     box-shadow: 2px 2px 8px 2px #cecece;
-    background-color: tomato;
+    background-color:#781200;
 }
 
 .button:hover {
@@ -575,12 +574,13 @@ textarea {
 
 .rating {
     background-color: #125524;
+    box-shadow: 2px 2px 8px 2px #cecece;
     text-transform: uppercase;
     color: #fff;
     font-weight: 500;
     margin-top: 10px;
-    width: 28%;
-    padding: .2rem;
+    width: auto;
+    padding: .25rem 2rem;
     border-radius: .5rem;
     text-align: center;
     font-size: 1.35rem;
@@ -639,13 +639,6 @@ RESPONSIVE FOR ALL SCREEN SIZES
         margin: 8px auto;
         text-align: center;
     }
-    label {
-        text-align: left;
-        display: block;
-        font-size: 1.15rem;
-        font-weight: 700;
-        position: relative;
-    }
     .filter-options h2,
     .filter-options select {
         display: block;
@@ -655,10 +648,6 @@ RESPONSIVE FOR ALL SCREEN SIZES
     .filter-options h2 {
         padding-top: 10px;
         font-size: 1.4rem;
-    }
-    .rating {
-        width: 26%;
-        max-width: auto;
     }
     #footer {
         padding-top: 1rem;
@@ -688,10 +677,9 @@ RESPONSIVE FOR ALL SCREEN SIZES
     }
     .inside .restaurant-img {
         max-width: 100%;
-        .rating {
-            width: 33%;
-            max-width: auto;
-        }
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
     /* ====================== Media Sizes Phones --Portrait Mode-- ====================== */
     @media only screen and (max-width: 435px) {
@@ -700,13 +688,13 @@ RESPONSIVE FOR ALL SCREEN SIZES
             font-weight: 200;
             letter-spacing: .2rem;
         }
-        .rating {
-            width: 45%;
-        }
         #footer {
             padding: 1rem 0;
             font-size: .65rem;
         }
         .inside .restaurant-img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
             max-width: 100%;
         }
