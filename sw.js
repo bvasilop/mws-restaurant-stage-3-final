@@ -59,11 +59,8 @@ const imagesToCache = [
   '/img/7_800.jpg',
   '/img/8_800.jpg',
   '/img/9_800.jpg',
-  '/img/10_800.jpg',
-  '/img/static-map/staticmap_400.jpg',
-  '/img/static-map/staticmap_600.jpg',
-  '/img/static-map/staticmap_800.jpg',
-  '/img/static-map/staticmap_1200.jpg'
+  '/img/10_800.jpg'
+
 ];
 
 const resourcesToCache = [
