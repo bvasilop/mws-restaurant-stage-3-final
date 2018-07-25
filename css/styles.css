@@ -218,7 +218,6 @@ label {
     font-size: 1.4rem;
 }
 
-
 /* ====================== Restaurant Listing ====================== */
 
 #restaurants-list {
@@ -345,8 +344,6 @@ label {
     text-align: center;
 }
 
-
-
 #restaurant-address {
     font-size: 1.15rem;
     margin: 10px auto;
@@ -439,7 +436,7 @@ textarea {
 
 .review-form-wrapper input[type='submit']:hover {
     box-shadow: none;
-    background-color:#781200;
+    background-color: #781200;
 }
 
 .review-form-radio-wrapper {
@@ -463,7 +460,7 @@ textarea {
     justify-self: center;
     box-shadow: 2px 2px 8px 2px #cecece;
     padding: 0.25rem 2rem;
-    border: 1px solid  #781200;
+    border: 1px solid #781200;
     border-radius: .5rem;
     color: #ffffff;
     background: rgb(18, 84, 37);
@@ -526,7 +523,7 @@ textarea {
     border: 1px solid #781200;
     padding: 0.25rem 0.5rem;
     box-shadow: 2px 2px 8px 2px #cecece;
-    background-color:#781200;
+    background-color: #781200;
 }
 
 .button:hover {
