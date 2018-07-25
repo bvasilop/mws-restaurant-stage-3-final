@@ -1,9 +1,11 @@
 /**
- * Register ServiceWorker.
+ * Register ServiceWorker Section.
  */
+
+ // Register service worker after the page has been completely loaded
 if ('serviceWorker' in navigator) {
-  // Defer service worker registration until after the page has been completely loaded
-  // as seen here: https://developers.google.com/web/fundamentals/primers/service-workers/registration
+
+
   window.addEventListener('load', function() {
     navigator.serviceWorker
       .register('sw.js')
@@ -12,7 +14,7 @@ if ('serviceWorker' in navigator) {
 }
 
 /**
- * Common database helper functions.
+ * DB Helper Section.
  */
 class DBHelper {
   /**
@@ -54,7 +56,7 @@ class DBHelper {
   }
 
   /**
-   * Delete store in IDB.
+   * Delete storage in IDB.
    */
   static deleteInIDB(transactionName, storeName) {
     return DBHelper.openIDB().then(db => {
@@ -115,7 +117,7 @@ class DBHelper {
     return fetch(`${DBHelper.DATABASE_URL}/${slug}`)
       .then(response => response.json())
       .then(data => {
-        // Write items to IDB for next visit
+        // Write items to IDB for time site is visited
         DBHelper.saveToIDB(data, slug, slug);
         return data;
       });
@@ -128,7 +130,7 @@ class DBHelper {
     return fetch(`${DBHelper.DATABASE_URL}/${slug}`)
       .then(response => response.json())
       .then(data => {
-        // Write items to IDB for next visit
+        // Write items to IDB for time site is visited
         DBHelper.saveToIDB(
           data,
           `reviews-restaurant-${self.restaurant.id}`,
@@ -186,10 +188,10 @@ class DBHelper {
   }
 
   /**
-   * Fetch restaurants by a cuisine type with proper error handling.
+   * Fetch restaurants by cuisine type and add error handling.
    */
   static fetchRestaurantByCuisine(cuisine, callback) {
-    // Fetch all restaurants  with proper error handling
+    // Fetch all restaurants  with error handling
     DBHelper.fetchRestaurants((error, restaurants) => {
       if (error) {
         callback(error, null);
@@ -202,7 +204,7 @@ class DBHelper {
   }
 
   /**
-   * Fetch restaurants by a neighborhood with proper error handling.
+   * Fetch restaurants by neighborhood with error handling.
    */
   static fetchRestaurantByNeighborhood(neighborhood, callback) {
     // Fetch all restaurants
@@ -218,7 +220,7 @@ class DBHelper {
   }
 
   /**
-   * Fetch restaurants by a cuisine and a neighborhood with proper error handling.
+   * Fetch restaurants by cuisine type and a neighborhood with error handling.
    */
   static fetchRestaurantByCuisineAndNeighborhood(
     cuisine,
