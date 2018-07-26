@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchNeighborhoods();
     fetchCuisines();
     updateRestaurants();
-    //createStaticMapHTML();
+
 });
 
 /**
