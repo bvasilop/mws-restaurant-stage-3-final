@@ -16,7 +16,7 @@ module.exports.globals = {
    * lodash --save, then var _ = require('lodash') at the top of any file.     *
    *                                                                           *
    *************************************************************************** */
-  _: true,
+  _: false,
   /** **************************************************************************
    *                                                                           *
    * Expose the async installed in Sails core as a global variable. If this is *
@@ -24,14 +24,14 @@ module.exports.globals = {
    * --save, then var async = require('async') at the top of any file.         *
    *                                                                           *
    *************************************************************************** */
-  async: true,
+  async: false,
   /** **************************************************************************
    *                                                                           *
    * Expose the sails instance representing your app. If this is disabled, you *
    * can still get access via req._sails.                                      *
    *                                                                           *
    *************************************************************************** */
-  sails: true,
+  sails: false,
   /** **************************************************************************
    *                                                                           *
    * Expose each of your app's services as global variables (using their       *
@@ -40,7 +40,7 @@ module.exports.globals = {
    * you can still access your services via sails.services.*                   *
    *                                                                           *
    *************************************************************************** */
-  services: true,
+  services: false,
   /** **************************************************************************
    *                                                                           *
    * Expose each of your app's models as global variables (using their         *
@@ -49,5 +49,5 @@ module.exports.globals = {
    * your models via sails.models.*.                                           *
    *                                                                           *
    *************************************************************************** */
-  models: true,
+  models: false,
 };
