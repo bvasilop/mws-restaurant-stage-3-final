@@ -31,5 +31,8 @@
   "bugs": {
     "url": "https://github.com/bvasilop/mws-restaurant-stage-3-final/issues"
   },
-  "homepage": "https://github.com/bvasilop/mws-restaurant-stage-3-final#readme"
+  "homepage": "https://github.com/bvasilop/mws-restaurant-stage-3-final#readme",
+  "dependencies": {
+    "sails-disk": "^1.1.2"
+  }
 }
