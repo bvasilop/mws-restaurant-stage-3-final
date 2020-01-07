@@ -1,3 +1,4 @@
+
 /**
  * Register ServiceWorker Section.
  */
@@ -13,10 +14,12 @@ if ('serviceWorker' in navigator) {
     });
 }
 
+import idb from 'idb';
+
 /**
  * DB Helper Section.
  */
-class DBHelper {
+export default class DBHelper {
     /**
      * Database URL.
      * Change this to restaurants.json file location on your server.
