@@ -22,7 +22,7 @@ class DBHelper {
   static get DATABASE_URL() {
     // const port = 1337; // Change this to your server port
     // return `http://localhost:${port}`;
-    return `https://angry-panini-30e436.netlify.com`;
+    return `https://bvasilop-mws-restaurant-stage-3.glitch.me/`;
   }
 
   /**
