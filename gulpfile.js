@@ -25,7 +25,7 @@ gulp.task('js', function() {
       .pipe(gulp.dest('build/js/'))
       .pipe(
         browserSync.reload({
-          stream: true
+          stream: true,
         })
       )
   );
@@ -77,19 +77,19 @@ gulp.task('build', [
   'images',
   'sw',
   'manifest',
-  'favicon'
+  'favicon',
 ]);
 
 // Serve
 gulp.task('serve', ['build'], function() {
   browserSync.init({
     server: {
-      baseDir: 'build/'
+      baseDir: 'build/',
     },
     ui: {
-      port: 5500
+      port: 5500,
     },
-    port: 5500
+    port: 5500,
   });
 });
 
