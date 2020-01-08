@@ -1,65 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="theme-color" content="#252831">
-    <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" href="favicon.ico">
-    <link rel="manifest" href="/manifest.webmanifest">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="theme-color" content="#252831" />
+    <!-- <link rel="canonical" href="https://sharp-brown-2c2431.netlify.com/" /> -->
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="icons/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="icons/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="icons/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="icons/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="icons/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="icons/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="icons/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="icons/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="icons/apple-icon-180x180.png"
+    />
+    <link
+      rel="stylesheet"
+      src="//normalize-css.googlecode.com/svn/trunk/normalize.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" href="favicon.ico" />
+    <link rel="manifest" href="/manifest.webmanifest" />
     <title>Restaurant Reviews</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <nav>
-            <h1 id="tophead" role="link">
-                <a href="/">Restaurant Reviews</a>
-            </h1>
-        </nav>
+      <nav>
+        <h1 id="tophead" role="link">
+          <a href="/">Restaurant Reviews</a>
+        </h1>
+      </nav>
     </header>
 
     <main id="maincontent" role="main">
-
-        <section id="map-container">
-            <div id="map" tabindex="0" role="application" aria-label="New York map image" lang="en"></div>
-        </section>
-        <!--<section id="filter-container">-->
-        <div class="filter-options">
-            <h2 role="heading">Filter Results</h2>
-            <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()" role="listbox" aria-label="select neighborhoods">
-                <option value="all" role="option" aria-label="All Neighborhoods">All Neighborhoods</option>
-            </select>
-            <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()" role="listbox" aria-label="select cuisines">
-                <option value="all" role="option" aria-label="All Cuisines">All Cuisines</option>
-            </select>
-        </div>
-        <!--</section>-->
-        <section id="restaurants-container">
-            <ul id="restaurants-list" role="list"></ul>
-        </section>
-
+      <section id="map-container">
+        <div
+          id="map"
+          tabindex="0"
+          role="application"
+          aria-label="New York map image"
+          lang="en"
+        ></div>
+      </section>
+      <!--<section id="filter-container">-->
+      <div class="filter-options">
+        <h2 role="heading">Filter Results</h2>
+        <select
+          id="neighborhoods-select"
+          name="neighborhoods"
+          onchange="updateRestaurants()"
+          role="listbox"
+          aria-label="select neighborhoods"
+        >
+          <option value="all" role="option" aria-label="All Neighborhoods"
+            >All Neighborhoods</option
+          >
+        </select>
+        <select
+          id="cuisines-select"
+          name="cuisines"
+          onchange="updateRestaurants()"
+          role="listbox"
+          aria-label="select cuisines"
+        >
+          <option value="all" role="option" aria-label="All Cuisines"
+            >All Cuisines</option
+          >
+        </select>
+      </div>
+      <!--</section>-->
+      <section id="restaurants-container">
+        <ul id="restaurants-list" role="list"></ul>
+      </section>
     </main>
 
     <footer id="footer" role="contentinfo">
-        Copyright (c) 2018
-        <a href="/">
-            <strong>Restaurant Reviews</strong>
-        </a> All Rights Reserved.
+      Copyright (c)
+      <a href="/">
+        <strong>BIll Vasilopoulos & Udacity</strong>
+      </a>
+      All Rights Reserved.
     </footer>
 
-
     <script defer src="js/idb.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/8.7.1/lazyload.min.js"></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/8.7.1/lazyload.min.js"
+    ></script>
     <script defer src="js/dbhelper.js"></script>
     <script defer src="js/main.js"></script>
 
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJBXJybEeKQ4iOMo_VeCscYh5x1lJfgBw&libraries=places&callback=initMap"></script>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJBXJybEeKQ4iOMo_VeCscYh5x1lJfgBw&libraries=places&callback=initMap"
+    ></script>
     <!-- End scripts -->
-
-</body>
-
+  </body>
 </html>
