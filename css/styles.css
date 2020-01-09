@@ -407,14 +407,10 @@ label {
 #reviews-list li p {
   padding: 0 1rem;
 }
-#reviews-list li span {
-  /* padding: 1rem 0; */
-}
 
 #reviews-container {
   display: flex;
   flex-flow: column wrap;
-  /*padding: 10px 20px;*/
   padding: 0;
 }
 span {
