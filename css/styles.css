@@ -3,7 +3,7 @@
 
 * {
   box-sizing: border-box;
-  /* font-family: Raleway; */
+  /* font-family: Georgia; */
 }
 
 body,
@@ -269,9 +269,8 @@ label {
 
 #restaurants-list li h1 {
   color: #f18200;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.75rem;
-  font-weight: 300;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 1.65rem;
   letter-spacing: 0;
   line-height: 1.3;
   margin: 20px 0 10px;
@@ -279,7 +278,9 @@ label {
 }
 
 #restaurants-list li h2 {
-  font-size: 1.35rem;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
 }
 
 #restaurants-list p {
@@ -395,7 +396,7 @@ label {
 #reviews-list li {
   background-color: #fff;
   border: 2px solid #f3f3f3;
-  border-radius: 1.75rem 0;
+  border-top-left-radius: 35px;
   display: block;
   list-style-type: none;
   overflow: hidden;
@@ -435,6 +436,7 @@ textarea {
 .review-form-wrapper {
   display: grid;
   grid-gap: 1px !important;
+  padding-bottom: 0.5rem;
 }
 
 .review-form-wrapper input[type="submit"]:hover {
@@ -464,7 +466,7 @@ textarea {
   border: 1px solid #781200;
   border-radius: 0.5rem;
   color: #ffffff;
-  background: rgb(18, 84, 37);
+  background: #3e4048;
   font-size: 1.5rem;
   cursor: pointer;
 }
@@ -554,15 +556,16 @@ textarea {
   letter-spacing: 0.1rem;
   color: #fff;
   display: inline-block;
-  font-size: 1.6rem;
-  font-weight: 400;
+  font-size: 1.4rem;
+  font-weight: 100;
   padding-bottom: 1rem;
 }
 
 .review-date {
-  padding-top: 0.75rem;
   color: #bbb;
-  display: inline-block;
+  float: right;
+  font-weight: 100;
+  padding-top: 0.25rem;
 }
 
 .review-content {
@@ -570,16 +573,16 @@ textarea {
 }
 
 .rating {
-  background-color: #125524;
+  background-color: #3f4148;
   box-shadow: 2px 2px 8px 2px #cecece;
   text-transform: uppercase;
   color: #fff;
   font-weight: 500;
   width: auto;
   padding: 0.25rem 2rem;
-  border-radius: 0.5rem;
+  border-bottom-right-radius: 35px;
   text-align: center;
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   letter-spacing: 0.05rem;
 }
 
@@ -690,6 +693,10 @@ RESPONSIVE FOR ALL SCREEN SIZES
     padding: 0.5rem 1.75rem 1.5rem;
     width: 500px;
   }
+  #map {
+    height: 61vh;
+    top: 11px;
+  }
 }
 /* ====================== Media Sizes Phones --Portrait Mode-- ====================== */
 @media only screen and (max-width: 435px) {
@@ -718,5 +725,14 @@ RESPONSIVE FOR ALL SCREEN SIZES
   #restaurants-list li {
     padding: 0rem 0.75rem 0.75rem;
     width: 95%;
+  }
+  /* #map {
+    height: 61vh;
+    width: 100%;
+    background-color: #ccc;
+    top: 52px;
+  } */
+  .filter-options h2 {
+    padding-top: 0.5rem;
   }
 }

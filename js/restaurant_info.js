@@ -213,18 +213,20 @@ createReviewHTML = review => {
     name.innerHTML = review.name;
     name.innerHTML = review.name;
     name.className = 'review-author';
-    name.setAttribute('role', 'heading'); //added ARIA role for accessibilty
-    name.setAttribute('tabindex', '0'); //added tabindex for accessibilty
+    name.setAttribute('role', 'heading'); //added ARIA role for accessibility
+    name.setAttribute('tabindex', '0'); //added tabindex for accessibility
     reviewHeader.appendChild(name);
 
     const date = document.createElement('span');
     const dateString = new Date(review.createdAt);
     date.innerHTML = dateString.toDateString();
+    date.className='review-date';
     date.setAttribute('tabindex', '0'); //added tabindex for accessibilty
-    li.appendChild(date);
+    reviewHeader.appendChild(date);
+    // li.appendChild(date);
 
     const rating = document.createElement('div');
-    rating.innerHTML = `Rating: ${review.rating}`;
+    rating.innerHTML = `Rating: ${review.rating}☆`;
     rating.className = 'rating';
     li.appendChild(rating);
 
