@@ -159,9 +159,10 @@ nav h1 a {
 /* ====================== Map ====================== */
 
 #map {
-  height: 42vh;
+  height: 60vh;
   width: 100%;
   background-color: #ccc;
+  top: 0px;
 }
 
 /* ====================== Restaurant Filtering ====================== */
@@ -239,10 +240,10 @@ label {
   margin: 0.25rem;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   border-radius: 1rem 0;
-  min-height: 380px;
-  padding: 0 20px 20px;
+  min-height: 350px;
+  padding: 0 0.5rem 1rem;
   text-align: left;
-  width: 345px;
+  width: 300px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -289,7 +290,7 @@ label {
 
 #restaurants-list li a {
   background-color: orange;
-  /color: #fff;
+  color: #fff;
   display: inline-block;
   font-size: 0.9rem;
   margin: 15px 0 0;
@@ -314,18 +315,17 @@ label {
 }
 
 .inside #map-container {
-  background: blue none repeat scroll 0 0;
   height: 100%;
   position: fixed;
   right: 0;
   width: 50%;
+  top: 60px;
 }
 
 .inside #map {
   background-color: #303e48;
   height: 100%;
   width: 100%;
-  bottom: 3%;
 }
 
 .inside #footer {
@@ -406,6 +406,9 @@ label {
 
 #reviews-list li p {
   padding: 0 1rem;
+}
+#reviews-list li span {
+  /* padding: 1rem 0; */
 }
 
 #reviews-container {
@@ -557,6 +560,7 @@ textarea {
   display: inline-block;
   font-size: 1.6rem;
   font-weight: 400;
+  padding-bottom: 1rem;
 }
 
 .review-date {
@@ -609,6 +613,7 @@ RESPONSIVE FOR ALL SCREEN SIZES
     height: 50vh;
     width: 100%;
     position: relative;
+    top: 0;
   }
   .inside #review-form-container {
     align-content: flex-start;
@@ -637,7 +642,6 @@ RESPONSIVE FOR ALL SCREEN SIZES
   .filter-options h2,
   .filter-options select {
     display: block;
-    margin: 10px auto;
     text-align: center;
   }
   .filter-options h2 {
@@ -646,9 +650,6 @@ RESPONSIVE FOR ALL SCREEN SIZES
   }
   #footer {
     padding-top: 1rem;
-  }
-  .inside #map {
-    bottom: 0;
   }
 }
 
@@ -686,7 +687,12 @@ RESPONSIVE FOR ALL SCREEN SIZES
     border-radius: 1.5rem 0;
   }
   .inside #map {
-    bottom: 0;
+    bottom: 5rem;
+  }
+  #restaurants-list li {
+    min-height: 500px;
+    padding: 0.5rem 1.75rem 1.5rem;
+    width: 500px;
   }
 }
 /* ====================== Media Sizes Phones --Portrait Mode-- ====================== */
@@ -708,5 +714,13 @@ RESPONSIVE FOR ALL SCREEN SIZES
   }
   .inside #map {
     bottom: 0;
+  }
+  #restaurants-list li {
+    min-height: 350px;
+    width: 95%;
+  }
+  #restaurants-list li {
+    padding: 0rem 0.75rem 0.75rem;
+    width: 95%;
   }
 }
