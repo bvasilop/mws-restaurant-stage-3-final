@@ -226,13 +226,14 @@ createReviewHTML = review => {
     // li.appendChild(date);
 
     const rating = document.createElement('div');
-    rating.innerHTML = `Rating: ${review.rating}☆`;
+    review.rating = review.rating.toString().replace(/(\d+)/g,function(a){return Array(+a+1).join('☆')});
+    rating.innerHTML = `Rating: ${review.rating}`;
     rating.className = 'rating';
     li.appendChild(rating);
 
     const comments = document.createElement('p');
     comments.innerHTML = review.comments;
-    rating.setAttribute('tabindex', '0'); //added tabindex for accessibilty
+    rating.setAttribute('tabindex', '0'); //added tabindex for accessibility
     li.appendChild(comments);
 
     return li;

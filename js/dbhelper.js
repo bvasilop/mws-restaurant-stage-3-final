@@ -23,6 +23,7 @@ class DBHelper {
     // const port = 1337; // Change this to your server port
     // return `http://localhost:${port}`;
     return `https://bvasilop-mws-restaurant-stage-3.glitch.me/`;
+    // return `https://localhost:server/restaurant.json`;
   }
 
   /**

@@ -726,13 +726,22 @@ RESPONSIVE FOR ALL SCREEN SIZES
     padding: 0rem 0.75rem 0.75rem;
     width: 95%;
   }
-  /* #map {
-    height: 61vh;
-    width: 100%;
-    background-color: #ccc;
-    top: 52px;
-  } */
+  #map {
+    height: 60vh;
+    top: 54px;
+  }
+  .inside #map {
+    top: 0;
+  }
   .filter-options h2 {
     padding-top: 0.5rem;
   }
+  .filter-options h2,
+  .filter-options select {
+    display: block;
+    margin: 7px auto;
+    text-align: center;
+  }
+  .filter-options {
+    padding-top: 20px;
 }
