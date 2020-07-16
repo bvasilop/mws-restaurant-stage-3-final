@@ -41,7 +41,7 @@
   },
   "homepage": "https://github.com/bvasilop/mws-restaurant-stage-3-final#readme",
   "dependencies": {
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "sails": "^1.2.3",
     "sails-disk": "^1.1.2"
   }
